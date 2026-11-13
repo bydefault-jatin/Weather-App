@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- Link to our stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Application Header with °C/°F Toggle -->
+        <header class="header-row">
+            <h1>Weather App</h1>
+            <div class="unit-toggle" role="group" aria-label="Temperature Unit Toggle">
+                <button id="unit-c" class="unit-btn active" type="button">°C</button>
+                <button id="unit-f" class="unit-btn" type="button">°F</button>
+            </div>
+        </header>
+
+        <!-- Search Bar Section -->
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="city-input" 
+                placeholder="Enter city name (e.g. Delhi, London, Springfield)..." 
+                autocomplete="off"
+                maxlength="100"
+            />
+            <button id="search-btn">Search</button>
+        </div>
+
+        <!-- Recent Searches Section (Clickable Chips) -->
+        <div id="recent-container" class="recent-container hidden">
+            <span class="recent-label">Recent Searches:</span>
+            <div id="recent-chips" class="recent-chips"></div>
+        </div>
+
+        <!-- Status Messages -->
+        <div id="loading" class="hidden">Loading weather & AQI data... ⏳</div>
+        <div id="error-message" class="hidden"></div>
+
+        <!-- Current Weather Section -->
+        <section id="current-weather" class="hidden">
+            <h2 id="city-name"></h2>
+            <div class="current-details">
+                <div class="weather-main">
+                    <span id="weather-emoji"></span>
+                    <span id="temperature"></span>
+                </div>
+                <p id="weather-desc"></p>
+                <div class="weather-metrics">
+                    <p>Humidity: <span id="humidity"></span>%</p>
+                    <p>Wind Speed: <span id="wind-speed"></span> km/h</p>
+                    <p>Air Quality: <span id="aqi-badge" class="aqi-badge">--</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7-Day Forecast Section -->
+        <section id="forecast-section" class="hidden">
+            <h2>7-Day Forecast</h2>
+            <div id="forecast-container" class="forecast-grid"></div>
+        </section>
+    </div>
+
+    <!-- Link to client-side JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
