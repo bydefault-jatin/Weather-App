@@ -49,47 +49,6 @@ weatherapp/
     └── script.js         # Client-side logic, API calls, and unit conversion
 ```
 
----
-
-## Installation & How to Run
-
-### Prerequisites
-- Python 3.8 or higher installed on your computer.
-
-### Step 1: Navigate to the Project Directory
-```bash
-cd /Users/utkarsh/Documents/weatherapp
-```
-
-### Step 2: Create and Activate a Virtual Environment
-- **macOS / Linux**:
-  ```bash
-  python3 -m venv venv
-  source venv/bin/activate
-  ```
-- **Windows**:
-  ```bash
-  python -m venv venv
-  venv\Scripts\activate
-  ```
-
-### Step 3: Install Required Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### Step 4: Run the Application
-```bash
-python3 app.py
-```
-*(Or the direct shortcut: `./venv/bin/python3 app.py`)*
-
-### Step 5: Open in Your Browser
-Open your browser and visit:
-👉 **[http://127.0.0.1:5000](http://127.0.0.1:5000)**
-
----
-
 ## How It Works Behind the Scenes
 
 1. **User Action**: The user enters a city name (e.g., `"Delhi"`) and clicks **Search** or presses **Enter**.
